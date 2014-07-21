@@ -1,0 +1,53 @@
+/*
+Theme Name: QuickLoans
+Theme URI: http://quickloans.konnessa.com/
+Author: Design by Pixeful, Coding by Konnessa
+Author URI: http://themeforest.net/user/pixeful
+Description: A one page loan theme
+License: GNU General Public License v2.0
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: dark, one-column, two-columns, responsive-layout, custom-menu, theme-options, translation-ready
+Version: 0.9
+*/
+
+.wp-caption {
+	font-size: 18px;
+	font-family: "Lato",Serif;
+	font-weight: 400;
+	color: #000;
+	margin: 0;
+	padding: 6px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-bpx;
+}
+.wp-caption-text {
+	font-size: 18px;
+	font-family: "Lato",Serif;
+	font-weight: 400;
+	color: #000;
+}
+.gallery-caption {
+	font-size: 18px;
+	font-family: "Lato",Serif;
+	font-weight: 400;
+	color: #000;
+	margin: 0;
+	padding: 6px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-bpx;
+}
+.bypostauthor {
+	font-size: 14px;
+	font-family: "Lato",Serif;
+	font-weight: 400;
+	color: #000;
+	margin: 0;
+	padding: 6px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-bpx;
+}
+
+.alignright { text-align: right; float: right; margin: 6px; }
+.alignleft { text-align: left; float: left; margin: 6px; }
+.aligncenter { text-align: center; margin-left: auto; margin-right: auto; float: none;}
+
