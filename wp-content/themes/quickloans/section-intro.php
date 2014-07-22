@@ -14,8 +14,8 @@
             <h3 class="special"><?php echo QuickLoansCore::getOpt('intro-sub-title',''); ?></h3>
             <div class="intro_links">
                 <a class="voverlay" href="http://www.youtube.com/v/<?php echo QuickLoansCore::getOpt('intro-video-id',''); ?>?autoplay=1&amp;rel=0&amp;enablejsapi=1&amp;playerapiid=ytplayer">
-                    <div class="arrow_blue">
-                        <div class="arrow_right"></div>
+                    <div class="arrow_blue">?
+                        <div class="arrow_right" style="display: none"></div>
                     </div>
                 </a>
                 <script src="<?php echo get_stylesheet_directory_uri(); ?>/videolb/jquery.tools.min.js" type="text/javascript"></script>
@@ -31,7 +31,39 @@
             <h1><?php echo QuickLoansCore::getOpt("intro-form-title",''); ?></h1>
             <h3 class="special"><?php echo QuickLoansCore::getOpt("intro-form-subtitle",''); ?></h3>
             <div class="polosochka_3"></div>
-            <div class="amount-cont js-loader-line-init">
+            <div class="cbp-so-section">
+         
+        <?php
+        $out = QuickLoansCore::getOpt("loan-steps",'');
+        if (!empty($out)) {
+            $i = 0;
+            $size = count($out);
+            foreach($out as $item) {
+                $i++;
+                $first = $vertical = "";
+                if ($i==1) {
+                    $first = "first";
+                }
+                if ($i<$size) {
+                    $vertical = '<div class="vertical"></div>';
+                }
+        ?>
+        <div class="step <?php echo $first; ?>">
+            <div class="img_border2"><h2><?php echo $i; ?></h2></div>
+            <?php echo $vertical; ?>
+            <h2><?php echo $item["title"]; ?></h2>
+            <p><?php echo $item["description"]; ?></p>
+        </div>
+        <?php
+            } // end foreach
+        } // endif
+        ?>
+                <div class="trial" ><a href="#loan">SUBMIT YOUR APPLICATION NOW</a></div>
+                <div class="bottom-label">
+                    <p>Application Fee Only <span> $20.00 </span>  <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/paypal.png" class="paypal" alt=""></p></div>
+               
+    </div>
+            <div class="amount-cont js-loader-line-init" style="display: none">
                 <div class="amount">
                     <div class="minus"></div>
                     <div class="load-line">
@@ -45,7 +77,7 @@
                     <span class="amount-message-sub"><?php _e('Up to','quickloans_theme'); ?> <?php echo QuickLoansCore::getOpt("loan-cur",'') . QuickLoansCore::getOpt("loan-amt-min-max",2); ?></span>
                 </div>
             </div>
-            <div class="amount-cont js-loader-line-init">
+            <div class="amount-cont js-loader-line-init" style="display: none">
                 <div class="amount">
                     <div class="minus"></div>
                     <div class="load-line">
@@ -53,13 +85,13 @@
                     </div>
                     <div class="plus"></div>
                 </div>
-                <input class="input-amount" id="calcPer" type="text" value="<?php echo QuickLoansCore::getOpt("loan-period-min-max",1) + ((QuickLoansCore::getOpt("loan-period-min-max",2) - QuickLoansCore::getOpt("loan-amt-min-max",1)) / 2); ?>" data-minval="<?php echo QuickLoansCore::getOpt("loan-period-min-max",1); ?>" data-maxval="<?php echo QuickLoansCore::getOpt("loan-period-min-max",2); ?>"  data-valstep="1" data-round="1">
+                <input style="display: none" class="input-amount" id="calcPer" type="text" value="<?php echo QuickLoansCore::getOpt("loan-period-min-max",1) + ((QuickLoansCore::getOpt("loan-period-min-max",2) - QuickLoansCore::getOpt("loan-amt-min-max",1)) / 2); ?>" data-minval="<?php echo QuickLoansCore::getOpt("loan-period-min-max",1); ?>" data-maxval="<?php echo QuickLoansCore::getOpt("loan-period-min-max",2); ?>"  data-valstep="1" data-round="1">
                 <div class="amount-message">
                     <span class="amount-message-main"><?php echo QuickLoansCore::getOpt("intro-period-query",''); ?></span><br>
                     <span class="amount-message-sub"><?php _e('Up to','quickloans_theme'); ?> <?php echo QuickLoansCore::getOpt("loan-period-min-max",2) . " " . (QuickLoansCore::getOpt("loan-period-type",'')==1?__("Days",'quickloans_theme'):__("Months",'quickloans_theme')); ?></span>
                 </div>
             </div>
-            <div class="trial"><a href="#loan" id="calc-loan" ><?php echo QuickLoansCore::getOpt("intro-action",''); ?></a></div>
+            <div class="trial" style="display: none"><a href="#loan" id="calc-loan" ><?php echo QuickLoansCore::getOpt("intro-action",''); ?></a></div>
         </div>
     </article>
 </section>

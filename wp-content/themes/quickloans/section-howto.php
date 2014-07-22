@@ -8,11 +8,11 @@
 ?>
 <section class="wraper bg-raw  fbscroll_item cbp-so-scroller" id="get">
     <h1><?php echo QuickLoansCore::getOpt("howto-title",''); ?></h1>
-    <div class="polosochka2"></div>
     <h3><?php echo QuickLoansCore::getOpt("howto-sub-title",''); ?></h3>
 
     <div class="get_cont cbp-so-section">
-        <div class="get_left cbp-so-side cbp-so-side-top">
+        <img class="q" src="<?php echo get_stylesheet_directory_uri(); ?>/img/question.png" alt="">
+        <div class=" cbp-so-side cbp-so-side-top">
             <h2><?php echo QuickLoansCore::getOpt("howto-left-header",''); ?></h2>
             <?php
 				$out = QuickLoansCore::getOpt("howto-left-bullet",'');
@@ -23,12 +23,12 @@
                 }
             ?>
 
-            <div class="note cbp-so-side cbp-so-side-top">
-                <p><?php echo QuickLoansCore::getOpt("howto-left-paper",'') ?></p>
-                <div class="trial"><a href="#loan" ><?php echo QuickLoansCore::getOpt("howto-left-action",''); ?></a></div>
+            <div class=" cbp-so-side cbp-so-side-top">
+                <div style="line-height: 24px;"><?php echo QuickLoansCore::getOpt("howto-left-paper",'') ?></div>
+                <div class="trial" style="display: none"><a href="#loan" ><?php echo QuickLoansCore::getOpt("howto-left-action",''); ?></a></div>
             </div>
         </div>
-        <div class="get_right cbp-so-side cbp-so-side-top">
+        <div class="get_right cbp-so-side cbp-so-side-top" style="display: none">
             <h2><?php echo QuickLoansCore::getOpt("howto-right-header",''); ?></h2>
             <p><?php echo QuickLoansCore::getOpt("howto-right-text",''); ?></p>
             <h2><?php echo QuickLoansCore::getOpt("howto-faq-heading",''); ?></h2>

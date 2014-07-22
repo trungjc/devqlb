@@ -7,7 +7,7 @@
  */
 ?>
 <section class="wraper bg-raw fbscroll_item cbp-so-scroller" id="map">
-    <div class="small_circle_cont cbp-so-section">
+    <div class="small_circle_cont cbp-so-section" style="display: none">
 
 <?php
 $args = array("post_type" => "contact_icon");
@@ -32,22 +32,19 @@ if ($myServices->have_posts()) {
 ?>
     </div>
     <div class="cbp-so-section">
-        <h1 class="super-puper-mega-h cbp-so-side cbp-so-side-top"><?php echo QuickLoansCore::getOpt("contact-title",''); ?></h1>
-        <div class="middle_logo"></div>
+        <div class="address_cont" style="margin-bottom:40px" >
+            <h1 class="super-puper-mega-h cbp-so-side cbp-so-side-top alignleft"><?php echo QuickLoansCore::getOpt("contact-title",''); ?></h1>
+      
+        </div>
+        
     </div>
     <div class="address3 mobile">
         <h3><?php _e('Call Now to Speak with an Agent','quickloans_theme'); ?></h3>
         <h1><span><?php echo QuickLoansCore::getOpt("contact-phone",''); ?></span></h1>
     </div>
-    <div class="map_container">
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/line.png" alt="">
-        <div id="fullwidthmap"></div>
-        <div class="map-mask"></div>
-        <div class="location"></div>
-    </div>
-    <div class="address_cont cbp-so-section">
+    <div class="address_cont cbp-so-section" style="padding-left: 100px">
         <div class="address1 cbp-so-side cbp-so-side-top">
-            <h3><?php _e('Street Address','quickloans_theme'); ?></h3>
+            <h3><?php _e('Contact Details ','quickloans_theme'); ?></h3>
             <p><?php echo nl2br(QuickLoansCore::getOpt("contact-street-address",'')); ?></p>
         </div>
         <div class="address2 cbp-so-side cbp-so-side-top">
@@ -55,7 +52,7 @@ if ($myServices->have_posts()) {
             <p><?php echo nl2br(QuickLoansCore::getOpt("contact-postal-address",'')); ?></p>
         </div>
         <div class="address3 pc cbp-so-side cbp-so-side-top">
-            <h3><?php _e('Call Now to speak with an Agent','quickloans_theme'); ?></h3>
+            <h3><?php _e('Call Us Now','quickloans_theme'); ?></h3>
             <h1><span><?php echo QuickLoansCore::getOpt("contact-phone",''); ?></span></h1>
         </div>
     </div>

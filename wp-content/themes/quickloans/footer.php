@@ -1,7 +1,7 @@
 <footer class="wraper">
     <section class="head-els footer">
         <div class="logo" onclick="$('.menu li a').first().click();">
-            <img src="<?php echo QuickLoansCore::getOpt("header-logo","url"); ?>" alt="">
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo-footer.png" alt="">
             <?php echo QuickLoansCore::getOpt("header-title",''); ?>
         </div>
 

@@ -9,7 +9,6 @@
 <form method="post" id="loanappform">
 <section class="wraper_bg-bright wraper_bg-bright-search t-clear cbp-so-scroller" id="loan" style="position: relative;">
     <h1><span><?php echo QuickLoansCore::getOpt("loanapp-title",''); ?></span></h1>
-    <div class="polosochka2"></div>
     <h3><?php echo QuickLoansCore::getOpt("loan-sub-title",''); ?></h3>
     <div id="loan-app-complete">
         <h1><span><?php _e('Thank you. We will be in touch shortly.','quickloans_theme'); ?></span></h1>
@@ -44,10 +43,11 @@
                             break;
                         }
                         case "text": {
-?>
+?> <?php echo $field["prepend"]  ?>
         <div class="cbp-so-side cbp-so-side-top">
             <p><?php echo $field["label"] . $req; ?></p>
             <input class="l_form1" name="<?php echo $field["name"]; ?>"  <?php echo $reqH; ?>>
+            <?php echo $field["append"]  ?>
         </div>
 <?php
                             break;
@@ -88,8 +88,17 @@
             </select>
         </div>
 <?php
+                        break; }
+                             case "file": {
+?>
+        <div class="cbp-so-side cbp-so-side-top">
+            <p><?php echo $field["label"] . $req; ?></p>
+            <input class="l_form1" type="file" <?php echo $reqH; ?> name="<?php echo $field["name"];  ?>">
+        </div>
+<?php
                             break;
-                        }
+                        } ?>
+                       <?php  
                         default :{
                             echo $field["type"] . "<br />";
                         }
@@ -106,10 +115,10 @@
         <div class="div cbp-so-side cbp-so-side-top">
             <p class="special">after <span id="selectedCalcPeriod">1</span> <?php echo (QuickLoansCore::getOpt("loan-period-type",'')==1?"Days":"Months"); ?> you pay back: <span id="selectedCalcTotal"><?php echo QuickLoansCore::getOpt("loan-cur",''); ?>100</span></p>
             <h1><span><span id="selectedCalcAmt"><?php echo QuickLoansCore::getOpt("loan-cur",''); ?>100</span> TOTAL</span></h1>
-            <a href="">Need more?</a>
+          
         </div>
         <?php
-		$out = QuickLoansCore::getOpt("loan-steps",'');
+        $out = QuickLoansCore::getOpt("loan-steps",'');
         if (!empty($out)) {
             $i = 0;
             $size = count($out);

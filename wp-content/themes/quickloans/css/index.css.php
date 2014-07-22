@@ -34,7 +34,7 @@ html, body
 }
 
 h1,h2,h3,h4,h5, p, ul
-{
+{   font-weight: normal;
     padding: 0;
     margin: 0;
 }
@@ -66,7 +66,6 @@ h1,h2,h3,h4,h5, p, ul
 	width: 100%;
 	z-index: 0;
 }
-
 body.admin-bar {
     margin-top: 32px;
 }
@@ -84,7 +83,6 @@ body.admin-bar .wraper.head {
 /*	font-style: italic;*/
 	font-size: 14px;
 	line-height: 14px;
-	font-family: 'Calibri',sans-serif;
 }
 .head-els
 {
@@ -174,7 +172,7 @@ ul.menu li:hover ul.sub-menu li a:hover {
 	position: relative;
 }
 
-.trial
+.trial,.btn
 {
 		text-align: center;
 		text-transform: uppercase;
@@ -188,11 +186,12 @@ ul.menu li:hover ul.sub-menu li a:hover {
 		font-weight: 400;
 		cursor: pointer;
 }
-.trial:hover
+.trial:hover,.btn:hover
 {
 		background-color: <?php echo QuickLoansCore::getOpt('theme-colour2',''); ?>;
 
 }
+.btn a {color:white;text-decoration: none;}
 .trial a
 {
 		display: block;
@@ -245,7 +244,7 @@ section.paging .dot.selected, section.paging .dot:hover
 }
 .wraper_bg-bright
 {       
-        background: #fcfcfc url("<?php echo get_stylesheet_directory_uri(); ?>/img/bg_bright.png") repeat;
+        background: #f8f8f3 url("<?php echo get_stylesheet_directory_uri(); ?>/img/body.png") no-repeat left top;
         color: #37353a;
         text-align: center;
         position: relative;
@@ -258,6 +257,7 @@ section.paging .dot.selected, section.paging .dot:hover
 		-o-background-size: cover;
 		background-size: cover;
 }        
+#services.wraper_bg-bright,#services + .diagonal2  {background:white;}
 .wraper_bg-bright h1
 {
 	padding: 70px 0px 10px 0px;
@@ -274,13 +274,12 @@ h1 span
 	color: <?php echo QuickLoansCore::getOpt('theme-colour2',''); ?>;
 }
 .wraper_bg-bright h3
-{
+{   text-align:left!important;
 	color: #7f8c8d;
-    font-family: <?php echo QuickLoansCore::getOpt('theme-heading-font','font-family'); ?>;
 	font-size: 16px;
 	line-height: 20px;
 	padding: 0px 0px 30px 0px;
-	font-weight: bold;
+	font-weight: 400;
 }
 h3 span
 {
@@ -325,21 +324,22 @@ h3 span
 }
 .wraper.bg-raw h1
 {
-        font-family: <?php echo QuickLoansCore::getOpt('theme-heading-font','font-family'); ?>;
+        font-family:Conv_Montserrat, <?php echo QuickLoansCore::getOpt('theme-heading-font','font-family'); ?>;
         text-align: center;
         padding:70px 0px 10px 0px;
 		font-size: 46px;
-		color: white;
+		color: #3498db;font-weight: normal;
 }
+.alignleft {text-align:left!important;}
 .wraper.bg-raw h3
 {
-        font-family: <?php echo QuickLoansCore::getOpt('theme-heading-font','font-family'); ?>;
+        font-family: Conv_Montserrat,<?php echo QuickLoansCore::getOpt('theme-heading-font','font-family'); ?>;
         text-align: center;
 		font-size: 16px;
 		color: white;
 		line-height: 25px;
 		max-width: 960px;
-		margin: auto;
+		margin: auto;font-weight: normal;
 		padding: 0px 0px 30px 0px;
 }
 footer.wraper
@@ -397,7 +397,7 @@ footer.wraper .logo
 	right: 47%;
 }
 .polosochka2
-{
+{display: none;
 		width: 100%;
 		height: 26px;
 		background-image: url("<?php echo get_stylesheet_directory_uri(); ?>/img/divider_2.png");
@@ -463,14 +463,46 @@ p{
 	width: 360px;
 }
 .intro_block h1{
-font-family: <?php echo QuickLoansCore::getOpt('theme-heading-font','font-family'); ?>;
+        font-family: <?php echo QuickLoansCore::getOpt('theme-heading-font','font-family'); ?>;
 	color: #4b494f !important;
-	padding-top: 55px !important;
+	padding-top: 20px !important;padding-bottom: 0px !important;
 }
 .intro_block h1, h3{
-font-family: <?php echo QuickLoansCore::getOpt('theme-heading-font','font-family'); ?>;
+        font-size: 16px;
+        color:#7f8c8d;
 	text-align: center !important;
 	float: none !important;
+}
+.intro_block h3 {
+    padding-bottom:0px!important;
+}
+.intro_block {
+    position: relative;
+}
+.intro_block .bottom-label p {
+    color:#464646;
+}
+.intro_block .bottom-label  span {
+ color:#3498db;
+}
+.intro_block .bottom-label img{margin-left: 50px;vertical-align: middle;}
+.intro_block .bottom-label  {
+    position: absolute;
+    bottom: 10px;
+    right: 40px;
+}
+.intro_block .polosochka_3 {margin: 10px auto 20px}
+.wraper p {
+    font-size:#7f8c8d;
+}
+.intro_block .img_border2 {
+    margin: 0 15px 20px 30px;
+}
+.intro_block .step {
+    height: 90px;
+}
+.intro_block .vertical {
+    top: 61px;
 }
 .intro_h{
 	float: right;
@@ -478,17 +510,21 @@ font-family: <?php echo QuickLoansCore::getOpt('theme-heading-font','font-family
 	height: 100%;
 }
 .intro_h h1{
-font-family: <?php echo QuickLoansCore::getOpt('theme-heading-font','font-family'); ?>;
 	margin-top: 190px;
 	margin-left: 70px;
 	padding-top: 0px !important;
+        color:#fff!important;
+}
+.intro_h h3{
+	 color:#3db1ff!important;font-size: 16px!important;
+} 
+.intro_h h3.ilink {
+     color:#fff!important;
 }
 .intro_h h3.special, .intro_block h3.special{
-font-family: <?php echo QuickLoansCore::getOpt('theme-heading-font','font-family'); ?>;
 	color: #7f8c8d;
 }
 .intro_h h3.special{
-font-family: <?php echo QuickLoansCore::getOpt('theme-heading-font','font-family'); ?>;
 	margin-left: 45px;
 }
 #services{
@@ -500,7 +536,6 @@ font-family: <?php echo QuickLoansCore::getOpt('theme-heading-font','font-family
 	text-align: center !important;
 }
 #map h1{
-font-family: <?php echo QuickLoansCore::getOpt('theme-heading-font','font-family'); ?>;
 	padding-top: 0px;
 }
 .map_container{
@@ -555,12 +590,20 @@ font-family: <?php echo QuickLoansCore::getOpt('theme-heading-font','font-family
 .address3 {
 	width: 315px;
 }
+.address3  h1 {
+    font-size: 12px!important;color:#fff!important;
+}
+.address3  h1 span {
+color:#fff!important;
+}
+.address3  h1 span span {
+    color:#e74a03;
+    font-size: 46px;
+}
 .address3 h1{
-font-family: <?php echo QuickLoansCore::getOpt('theme-heading-font','font-family'); ?>;
 	padding: 0 !important;
 }
 .address_cont h3{
-font-family: <?php echo QuickLoansCore::getOpt('theme-heading-font','font-family'); ?>;
 	margin:0px !important;
 	padding:0px !important;
 	font-size: 18px !important;
@@ -575,7 +618,6 @@ font-family: <?php echo QuickLoansCore::getOpt('theme-heading-font','font-family
 }
 .services_cont{
 	display: block;
-	height: 550px;
 	width: 980px;
 	margin: auto;
 	margin-top: 40px;
@@ -586,14 +628,10 @@ font-family: <?php echo QuickLoansCore::getOpt('theme-heading-font','font-family
 	font-size: 14px;
 	color: #7f8c8d;
 	margin-top: 20px;
-	width: 230px;
 	text-align: left;
-	margin-left: 185px;
 
 }
 .services_cont h2{
-font-family: <?php echo QuickLoansCore::getOpt('theme-heading-font','font-family'); ?>;
-	margin-left: 185px;
 	margin-top: 15px;
 }
 .service_l, .service_r{
@@ -602,6 +640,27 @@ font-family: <?php echo QuickLoansCore::getOpt('theme-heading-font','font-family
 	height: 185px;
 	vertical-align: top;
 }
+.services_cont_slider .fl {
+    float: left;
+    width: 30%;
+}
+.services_cont_slider .fl + .fl {
+    margin-left: 49px;
+}
+.service_6   {
+    overflow: hidden;
+}
+.service_6   .image {
+    float: left;margin-right:10px;
+}
+.service_6 h2 {display:none}
+.service_6 h2.last-heading {display:block!important}
+.service_6   p {
+    overflow: hidden;
+    
+    
+}
+.service_6  
 /*.service_r{
 	margin-left: 65px;
 }*/
@@ -611,7 +670,6 @@ font-family: <?php echo QuickLoansCore::getOpt('theme-heading-font','font-family
 	margin-top: 25px;
 }
 /*.service_l h2, .service_r h2{
-font-family: <?php echo QuickLoansCore::getOpt('theme-heading-font','font-family'); ?>;
 	margin-top: 25px;
 }*/
 .loan_l, .loan_m, .loan_r{
@@ -625,7 +683,6 @@ font-family: <?php echo QuickLoansCore::getOpt('theme-heading-font','font-family
 	margin-left: 15px;
 }
 .loan_r h1{
-font-family: <?php echo QuickLoansCore::getOpt('theme-heading-font','font-family'); ?>;
 	padding-top: 5px;
 	padding-bottom: 0px;
 }
@@ -645,7 +702,6 @@ font-family: <?php echo QuickLoansCore::getOpt('theme-heading-font','font-family
 	margin-left: -184px;
 	margin-bottom: 40px;
 	color: #43a4e2;
-    font-family: <?php echo QuickLoansCore::getOpt('theme-body-font','font-family'); ?>;
     color: <?php echo QuickLoansCore::getOpt('theme-body-font','color'); ?>;
 	height: 32px;
 	line-height: 32px;
@@ -684,7 +740,7 @@ font-family: <?php echo QuickLoansCore::getOpt('theme-heading-font','font-family
 	position: relative;
 	margin: auto;
 	margin-left: 100px;
-	background: #e74a03;
+	background: #3498db;
 	width: 40px;
 	height: 40px;
 	border-radius: 20px;
@@ -694,6 +750,10 @@ font-family: <?php echo QuickLoansCore::getOpt('theme-heading-font','font-family
 	cursor: pointer;
 	z-index: 2;
 	float: left;
+        text-align: center;
+        line-height: 40px;
+        font-size: 32px;
+        color:white;
 }
 .step{
 	height: 102px;
@@ -721,11 +781,15 @@ font-family: <?php echo QuickLoansCore::getOpt('theme-heading-font','font-family
 	top: 30%;
 	left: 40%;
 }
+
+.arrow_blue {
+    
+}
 .icon_white {
 	position: relative;
 	margin: auto;
 	margin-left: 30px;
-	background: white;
+	 background: #f8f8f3 url("<?php echo get_stylesheet_directory_uri(); ?>/img/body.png") no-repeat left bottom;
 	width: 40px;
 	height: 40px;
 	border-radius: 20px;
@@ -747,7 +811,6 @@ font-family: <?php echo QuickLoansCore::getOpt('theme-heading-font','font-family
 	display: block;
 }
 .intro_links h3.ilink{
-font-family: <?php echo QuickLoansCore::getOpt('theme-heading-font','font-family'); ?>;
 	color: white;
 	margin-top: 8px;
 	margin-left: 15px;
@@ -757,7 +820,7 @@ font-family: <?php echo QuickLoansCore::getOpt('theme-heading-font','font-family
 }
 .get_cont {
 	display: block;
-	height: 800px;
+	height: 400px;
 	width: 960px;
 	margin: auto;
 	margin-top: 40px;
@@ -766,8 +829,6 @@ font-family: <?php echo QuickLoansCore::getOpt('theme-heading-font','font-family
 .get_cont p, .js-animated-list{
 	color: white;
 	margin-bottom: 25px;
-	font-size: 14pt;
-	line-height: 18pt;
 }
 .get_left p{
 	margin-left: -25px;
@@ -818,7 +879,6 @@ p.ticklist{
 	width: 385px;
 }
 .get_left h2, .get_right h2 {
-font-family: <?php echo QuickLoansCore::getOpt('theme-heading-font','font-family'); ?>;
 	color: <?php echo QuickLoansCore::getOpt('theme-colour2',''); ?>;
 	font-size: 20pt;
 	margin-bottom: 15px;
@@ -941,6 +1001,15 @@ font-family: <?php echo QuickLoansCore::getOpt('theme-heading-font','font-family
 	width: 960px;
 	margin: auto;
 }
+.cbp-so-sections {
+    margin-left: 320px;
+    text-left: left;
+}
+.q{
+    float: left;
+    margin-right: 114px;
+}
+.q + .cbp-so-side-top { overflow: hidden;}
 .getaloan-cont .p_bottom{
 	display: inline-block;
 	width: 180px;
@@ -987,7 +1056,6 @@ font-family: <?php echo QuickLoansCore::getOpt('theme-heading-font','font-family
 }
 .img_border2 h2
 {
-font-family: <?php echo QuickLoansCore::getOpt('theme-heading-font','font-family'); ?>;
 	margin-top: 15px;
 }
 
@@ -1359,7 +1427,6 @@ font-family: <?php echo QuickLoansCore::getOpt('theme-heading-font','font-family
 	transition: transform .9s, opacity .9s;
 }
 .intro_h h1{
-font-family: <?php echo QuickLoansCore::getOpt('theme-heading-font','font-family'); ?>;
 	-webkit-transition: -webkit-transform .1s, opacity .1s;
 	-moz-transition: -moz-transform .1s, opacity .1s; 
 	transition: transform 3.8s, opacity 3.8s;
@@ -1379,7 +1446,7 @@ font-family: <?php echo QuickLoansCore::getOpt('theme-heading-font','font-family
 	z-index: -1;
 }
 #loan{
-	margin-top: -22px;
+	margin-top: -27px;
 	margin-bottom: -21px;
 }
 #map{
@@ -1392,18 +1459,14 @@ font-family: <?php echo QuickLoansCore::getOpt('theme-heading-font','font-family
 	transform: rotate(1deg);
 	-ms-transform:rotate(1deg); /* IE 9 */
 	-webkit-transform:rotate(1deg); /* Safari and Chrome */
-	background-color: white;
-	background-image: url("<?php echo get_stylesheet_directory_uri(); ?>/img/bg_bright.png");
-}
+ }
 .diagonal2{
 	width: 100%;
 	height: 47px;
-	transform: rotate(-1deg);
-	-ms-transform:rotate(-1deg); /* IE 9 */
-	-webkit-transform:rotate(-1deg); /* Safari and Chrome */
-	background-color: white;
-	background-image: url("<?php echo get_stylesheet_directory_uri(); ?>/img/bg_bright.png");
-	background-position: bottom;
+	transform: rotate(1deg);
+	-ms-transform:rotate(1deg); /* IE 9 */
+	-webkit-transform:rotate(1deg); /* Safari and Chrome */
+	background: #f8f8f3 url("<?php echo get_stylesheet_directory_uri(); ?>/img/body.png") no-repeat left bottom;
 }
 
 
@@ -1594,7 +1657,6 @@ div#fullwidthmap {
 }
 
 .widget.widget_search label {
-	font-family: "Lato";
 	font-weight: 200;
 	color: #222;
 	font-size: 32px;
@@ -1607,7 +1669,6 @@ div#fullwidthmap {
 }
 
 .widget .widget-title {
-	font-family: "Lato";
 	font-weight: 400;
 	font-size: 24px;
 	display: block;
@@ -1627,7 +1688,6 @@ div#fullwidthmap {
 
 .widget {
 	font-size: 14px;
-	font-family: "Open Sans";
 }
 
 .widget ul {
@@ -1638,7 +1698,6 @@ div#fullwidthmap {
 
 .widget a {
 	font-size: 14px;
-	font-family: "Open Sans";
 	display: block;
 	padding: 4px 0px;
 	text-decoration: none;
@@ -1670,7 +1729,6 @@ body.single .hentry {
 	padding-top: 0;
 }
 .hentry .entry-title a {
-	font-family: "Lato";
 	font-weight: 400;
 	text-decoration: none;
 	color: <?php echo QuickLoansCore::getOpt('theme-colour2',''); ?>;	
@@ -1688,7 +1746,6 @@ body.single .hentry {
 }
 
 .hentry a {
-	font-family: "Open Sans";
 	color: <?php echo QuickLoansCore::getOpt('theme-colour2',''); ?>;	
 }
 
@@ -1718,7 +1775,6 @@ body.single .hentry {
 }
 
 #category h3 a {
-	font-family: "Open Sans";
 	color: #444;
 	text-decoration: none;
 }
@@ -1741,7 +1797,6 @@ body.single .hentry {
 }
 
 .widget.tagwidget {
-	font-family: "Lato";
 	font-weight: 400;
 	font-size: 24px;
 	display: block;
@@ -1772,7 +1827,6 @@ body.single .hentry {
 
 .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6 {
 	text-align: left !important;
-	font-family: "Lato";
 	font-weight: 600;
 	margin-left: 0;
 }
@@ -1838,7 +1892,6 @@ textarea#comment {
 }
 
 h3#reply-title {
-	font-family: "Lato";
 	font-weight: 400;
 	font-size: 24px;
 	display: block;
